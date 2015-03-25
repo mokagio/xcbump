@@ -1,5 +1,7 @@
-require "xcbump/version"
+require 'plist'
 
-module Xcbump
-  # Your code goes here...
-end
+require 'xcbump/git_helper'
+require 'xcbump/project_version_helper'
+require 'xcbump/semver_helper'
+
+require 'xcbump/version'
