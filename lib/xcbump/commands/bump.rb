@@ -1,19 +1,5 @@
-module Dean
+module XCBump
   class VersionBumper
-
-    def bump_all_environments(value, name=nil)
-      configurations_helper = ConfigurationHelper.new
-      # TODO: this is a dirty hack! please remove it soon!
-      environments = configurations_helper.all_environments.uniq { |e| e[:plist] }
-      environments.each do |environment|
-        bump_environment value, environment, name
-      end
-    end
-
-    def bump_environment(value, environment, name=nil)
-      bump environment[:plist], value, name
-      bump_short environment[:plist], value, name
-    end
 
     def bump(plist, value, name=nil)
       version = XCBump::ProjectVersionHelper.new.version_from_plist plist
